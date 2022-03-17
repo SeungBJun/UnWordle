@@ -117,6 +117,8 @@ def unwordle():
 
         # Trim down potential solutions
         trimmed_down_list = trim_list_of_guesses(trimmed_down_list, selected_word, evaluation)
+        if selected_word in trimmed_down_list:
+            trimmed_down_list.remove(selected_word)
 
         # Select next guess
         selected_word = select_word(trimmed_down_list)
